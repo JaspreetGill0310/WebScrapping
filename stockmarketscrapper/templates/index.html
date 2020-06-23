@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<title>Search Page</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <ul class="cmp_list"><li>Fluor Corporation(FLR)</li><li>Facebook Inc.(FB)</li><li>Tesla Inc.(TSLA)</li><li>Husky Energy Inc.(HSE)</li><li>Sundial Growers Inc.(SNDL)</li><li>Nikola Corporation(NKLA)</li><li>Royal Dutch Shell (RDS-B)</li><li>Morguard Real Estate Investment Trust (MRT-UN.TO)</li><li>Slate Retail REIT (SRT-UN.TO)</li><li>Inovalis Real Estate Investment Trust (INO-UN.TO)</li></ul>
+    <h1 style="text-align: center">Enter Company Symbol on Stock Market</h1>
+
+    <div class="form">
+        <form action="/review" method="POST">
+            <input type="text" name="content" id="content">
+            <input type="submit" value="Search">
+        </form>
+    </div>
+</div>
+{% endblock %}

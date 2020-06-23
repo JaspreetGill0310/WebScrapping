@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Review Page</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+
+      <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+
+</head>
+
+<body>
+
+
+         {% for review in reviews %}
+<div class="table-users">
+   <div class="header">Stock Market Data( {{review.Companyname}} ) <div>Current Price: {{review.price}} </div> {{review.changeinprice}}</div>
+      <table>
+      <tr><th>Previous Close</th><td>{{review.PreviousClose}}</td></tr>
+      <tr><th>Open</th><td>{{review.Open}}</td></tr>
+      <tr><th>Bid</th><td>{{review.Bid}}</td></tr>
+      <tr><th>Ask</th><td>{{review.Ask}}</td></tr>
+      <tr><th>Day Range</th><td>{{review.DayRange}}</td></tr>
+      <tr><th>Volume</th><td>{{review.Volume}}</td></tr>
+      <tr><th>Avg. Volume</th><td>{{review.AvgVolume}}</td></tr>
+      <tr><th>Market Cap</th><td>{{review.MarketCap}}</td></tr>
+          <tr><th>Beta(5Y Monthly)</th><td>{{review.Beta5YMonthly}}</td></tr>
+          <tr><th>PE Ratio (TTM)</th><td>{{review.PERatioTTM}}</td></tr>
+          <tr><th>EPS (TTM)</th><td>{{review.EPSTTM}}</td></tr>
+          <tr><th>Earnings Date</th><td>{{review.EarningsDate}}</td></tr>
+
+          <tr><th>Forward Dividend & Yield</th><td>{{review.ForwardDividendYield}}</td></tr>
+          <tr><th>Ex-Dividend Date</th><td>{{review.ExDividendDate}}</td></tr>
+
+
+                </table>
+
+</div>
+       {% endfor %}
+
+
+</body>
+</html>
+
